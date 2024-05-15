@@ -21,7 +21,12 @@ class OrderManagement:
             choice = int(input("Please choose from above options: "))
 
             if choice == 1:
-                pass
+                user_id = int(input("Enter user ID: "))
+                username = input("Enter username: ")
+                password = input("Enter password: ")
+                role = input("Enter role (Admin/User): ")
+                user = Users(user_id, username, password, role)
+                order_processor.createUser(user)
 
             elif choice == 2:
                 product_id = int(input("Enter product ID: "))

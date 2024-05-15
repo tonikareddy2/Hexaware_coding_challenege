@@ -15,9 +15,9 @@ class IOrderManagementRepository(ABC):
     def createProduct(self, user, product):
         pass
 
-    # @abstractmethod
-    # def createUser(self, user):
-    #     pass
+    @abstractmethod
+    def createUser(self, user):
+        pass
 
     @abstractmethod
     def getAllProducts(self):
