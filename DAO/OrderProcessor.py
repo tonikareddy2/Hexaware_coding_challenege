@@ -18,3 +18,15 @@ class OrderProcessor(IOrderManagementRepository, DBconnection):
                 print("User created successfully.")
         except Exception as e:
             print("Error creating order:", e)
+
+    def cancelOrder(self, userId, orderId):
+        try:
+            self.cursor.execute(
+                "SELECT * FROM Orders WHERE userId=? AND orderId=?", (userId, orderId)
+            )
+            order_exists = self.cursor.fetchone()
+            print("Order Canceled Successfully")
+            if not order_exists:
+                raise OrderNotFound(orderId)
+        except Exception as e:
+            print("Error canceling order:", e)

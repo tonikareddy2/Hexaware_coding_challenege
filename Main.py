@@ -43,7 +43,7 @@ class OrderManagement:
                         )
                         product_type = input(
                             f"Enter product type {i+1} (Electronics/Clothing): "
-                        )
+                        ).capitalize()
                         product = Product(
                             product_id,
                             product_name,
@@ -53,13 +53,16 @@ class OrderManagement:
                             product_type,
                         )
                         products.append(product)
-                        user = Users(user_id, "", "", "")
-                        order_processor.createOrder(user, products)
+                    user = Users(user_id, "", "", "")
+                    order_processor.createOrder(user, products)
+                    print("Order successfully created")
                 except Exception as e:
                     print("Error creating order:", e)
 
             elif choice == 4:
-                pass
+                user_id = int(input("Enter user ID: "))
+                order_id = int(input("Enter order ID: "))
+                order_processor.cancelOrder(user_id, order_id)
 
             elif choice == 5:
                 pass
