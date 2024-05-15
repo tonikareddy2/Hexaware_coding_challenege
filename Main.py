@@ -24,7 +24,21 @@ class OrderManagement:
                 pass
 
             elif choice == 2:
-                pass
+                product_id = int(input("Enter product ID: "))
+                product_name = input("Enter product name: ")
+                description = input("Enter description: ")
+                price = float(input("Enter price: "))
+                quantity_in_stock = int(input("Enter quantity in stock: "))
+                product_type = input("Enter product type (Electronics/Clothing): ")
+                product = Product(
+                    product_id,
+                    product_name,
+                    description,
+                    price,
+                    quantity_in_stock,
+                    product_type,
+                )
+                order_processor.createProduct(product)
 
             elif choice == 3:
                 try:

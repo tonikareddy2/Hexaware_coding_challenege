@@ -49,3 +49,22 @@ class OrderProcessor(IOrderManagementRepository, DBconnection):
 
         except Exception as e:
             print("Error getting orders by user:", e)
+
+    def createProduct(self, product):
+        try:
+            self.cursor.execute(
+                "INSERT INTO Product (productId, productName, description, price, quantityInStock, type) VALUES (?, ?, ?, ?, ?, ?)",
+                (
+                    product.productId,
+                    product.productName,
+                    product.description,
+                    product.price,
+                    product.quantityInStock,
+                    product.type,
+                ),
+            )
+            self.conn.commit()
+            print("Product created successfully.")
+
+        except Exception as e:
+            print("Error creating product:", e)

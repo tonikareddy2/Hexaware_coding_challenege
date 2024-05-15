@@ -11,9 +11,9 @@ class IOrderManagementRepository(ABC):
     def cancelOrder(self, userId, orderId):
         pass
 
-    # @abstractmethod
-    # def createProduct(self, user, product):
-    #     pass
+    @abstractmethod
+    def createProduct(self, user, product):
+        pass
 
     # @abstractmethod
     # def createUser(self, user):
