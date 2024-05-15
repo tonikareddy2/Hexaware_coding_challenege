@@ -29,7 +29,17 @@ VALUES
 (4, 'test_user', 'testpass', 'User'),
 (5, 'super_admin', 'superadmin', 'Admin');
 
+-- Insert into Orders table
+INSERT INTO Orders (orderId, userId, productId, orderDate)
+VALUES 
+(1, 1, 1, '2023-05-15'),
+(2, 2, 2, '2023-06-20'),
+(3, 3, 3, '2023-07-25'),
+(4, 4, 4, '2023-08-30'),
+(5, 5, 5, '2023-09-05');
+
 SELECT * FROM Product;
 SELECT * FROM Users;
 SELECT * FROM Electronics;
 SELECT * FROM Clothing;
+SELECT * FROM Orders;

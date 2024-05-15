@@ -65,16 +65,18 @@ class OrderManagement:
                 order_processor.cancelOrder(user_id, order_id)
 
             elif choice == 5:
-                pass
+                order_processor.getAllProducts()
 
             elif choice == 6:
-                pass
+                user_id = int(input("Enter user ID: "))
+                user = Users(user_id, "", "", "")
+                order_processor.getOrderByUser(user)
 
             elif choice == 7:
-                print("Exiting...")
+                print("Exited. Come Back Soon!👋")
                 break
 
 
 if __name__ == "__main__":
-    print("Welcome to the Order Management System")
+    print("Welcome to the Order Management System😊")
     OrderManagement.main()

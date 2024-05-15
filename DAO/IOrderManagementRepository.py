@@ -19,10 +19,10 @@ class IOrderManagementRepository(ABC):
     # def createUser(self, user):
     #     pass
 
-    # @abstractmethod
-    # def getAllProducts(self):
-    #     pass
+    @abstractmethod
+    def getAllProducts(self):
+        pass
 
-    # @abstractmethod
-    # def getOrderByUser(self, user):
-    #     pass
+    @abstractmethod
+    def getOrderByUser(self, user):
+        pass

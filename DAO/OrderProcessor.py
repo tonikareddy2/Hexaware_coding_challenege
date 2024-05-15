@@ -30,3 +30,22 @@ class OrderProcessor(IOrderManagementRepository, DBconnection):
                 raise OrderNotFound(orderId)
         except Exception as e:
             print("Error canceling order:", e)
+
+    def getAllProducts(self):
+        try:
+            self.cursor.execute("SELECT * FROM Product")
+            products = self.cursor.fetchall()
+            for product in products:
+                print(product)
+        except Exception as e:
+            print("Error getting all products:", e)
+
+    def getOrderByUser(self, user):
+        try:
+            self.cursor.execute("SELECT * FROM Orders WHERE userId=?", (user.userId,))
+            orders = self.cursor.fetchall()
+            for order in orders:
+                print(order)
+
+        except Exception as e:
+            print("Error getting orders by user:", e)

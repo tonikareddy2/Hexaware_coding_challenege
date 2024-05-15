@@ -30,3 +30,12 @@ CREATE TABLE Users (
     password VARCHAR(255),
     role VARCHAR(20)
 );
+
+CREATE TABLE Orders (
+    orderId INT PRIMARY KEY,
+    userId INT,
+    productId INT,
+    orderDate DATE,
+    FOREIGN KEY (userId) REFERENCES Users(userId),
+    FOREIGN KEY (productId) REFERENCES Product(productId)
+);
