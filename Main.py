@@ -46,6 +46,7 @@ class OrderManagement:
                 order_processor.createProduct(product)
 
             elif choice == 3:
+                order_processor.getAllProducts()
                 try:
                     user_id = int(input("Enter user ID: "))
                     num_products = int(
